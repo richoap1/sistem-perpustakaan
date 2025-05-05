@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Book</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js']) <!-- Link Tailwind CSS -->
-</head>
-<body class="bg-gray-100">
+@extends('layouts.app')
 
+@section('content')
     <div class="container mx-auto p-8">
         <h1 class="text-3xl font-semibold mb-6">Add New Book</h1>
 
@@ -70,6 +63,5 @@
 
         <a href="{{ route('books.index') }}" class="text-blue-500 mt-4 inline-block">Back to Books List</a>
     </div>
-
-</body>
-</html>
+    </section>
+    @endsection

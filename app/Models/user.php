@@ -24,7 +24,7 @@ class User extends Authenticatable
     // Relasi dengan tabel roles
     public function role()
     {
-        return $this->hasOne(Role::class);
+        return $this->belongsTo(Role::class);
     }
 
     // Relasi dengan tabel peminjaman_buku

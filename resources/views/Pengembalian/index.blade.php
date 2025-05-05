@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Pengembalian Buku</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])  <!-- Link Tailwind CSS -->
-</head>
-<body class="bg-gray-100">
+@extends('layouts.app')
 
+@section('content')
     <div class="container mx-auto p-8">
         <h1 class="text-3xl font-semibold mb-6">Daftar Pengembalian Buku</h1>
 
@@ -37,6 +30,4 @@
 
         <a href="{{ route('pengembalian.create') }}" class="bg-blue-500 text-white px-6 py-2 rounded-md mt-4 inline-block">Add New Pengembalian</a>
     </div>
-
-</body>
-</html>
+    @endsection

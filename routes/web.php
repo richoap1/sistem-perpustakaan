@@ -9,6 +9,7 @@ use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminController;
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
@@ -63,3 +64,14 @@ Route::get('/pengembalian', [PengembalianController::class, 'index'])->name('pen
 Route::get('/pengembalian/create', [PengembalianController::class, 'create'])->name('pengembalian.create');
 Route::post('/pengembalian', [PengembalianController::class, 'store'])->name('pengembalian.store');
 Route::put('/pengembalian/{pengembalianBuku}/set-denda', [PengembalianController::class, 'setDenda'])->name('pengembalian.setDenda');
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/admin/pengembalian', [PengembalianController::class, 'index'])->name('admin.pengembalian');
+
+    Route::get('/pengembalian', [PengembalianController::class, 'index'])->name('pengembalian.index');
+    Route::get('/pengembalian/create', [PengembalianController::class, 'create'])->name('pengembalian.create');
+
+    Route::get('/booksmanage', [ManageBookController::class, 'index'])->name('books.manage');
+    Route::get('/books/create', [CreateBookController::class, 'create'])->name('books.create');
+});

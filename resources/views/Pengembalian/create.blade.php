@@ -1,14 +1,6 @@
-<!-- filepath: c:\laragon\www\sistem-perpustakaan\resources\views\Pengembalian\create.blade.php -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Pengembalian Buku</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])  <!-- Link Tailwind CSS -->
-</head>
-<body class="bg-gray-100">
+@extends('layouts.app')
 
+@section('content')
     <div class="container mx-auto p-8">
         <h1 class="text-3xl font-semibold mb-6">Form Pengembalian Buku</h1>
 
@@ -85,6 +77,4 @@
             });
         });
     </script>
-
-</body>
-</html>
+@endsection

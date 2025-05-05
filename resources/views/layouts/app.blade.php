@@ -19,15 +19,6 @@
                 <p class="text-sm text-cyan-400 italic mt-1">Menemukan Pengetahuan Tanpa Batas</p>
             </div>
 
-            <!-- Search Bar -->
-            <form action="#" method="GET" class="max-w-md mx-auto mb-8">
-                <input 
-                    type="text" 
-                    placeholder="Cari..." 
-                    class="w-full rounded-full py-3 px-5 bg-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 shadow-md"
-                />
-            </form>
-
             <!-- Navbar Links -->
             <div class="flex justify-center items-center space-x-8 text-lg font-medium">
                 <a href="{{ route('landing') }}" class="hover:text-cyan-500 transition-colors duration-300">Beranda</a>

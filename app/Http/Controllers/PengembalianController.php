@@ -14,12 +14,11 @@ class PengembalianController extends Controller
     // Fungsi untuk menampilkan list pengembalian buku
     public function index()
     {
-        // Ambil semua data pengembalian buku
+        // Ambil data pengembalian buku dari model
         $pengembalian_bukus = PengembalianBuku::all();
-
-        // Menampilkan view dengan data pengembalian buku
         return view('pengembalian.index', compact('pengembalian_bukus'));
     }
+
     public function create(Request $request)
     {
         // Ambil semua buku yang sedang dipinjam (ketersediaan_buku = 0)

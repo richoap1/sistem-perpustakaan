@@ -17,18 +17,22 @@ class AuthController extends Controller
     }
 
     // Proses login
-    public function login(Request $request)
+        public function login(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
+        // Validasi dan proses login
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect()->route('landing')->with('success', 'Login berhasil!');
+            $user = Auth::user();
+
+            if ($user->role === 'admin') {
+                return redirect('/admin');
+            } else {
+                return redirect('/'); // atau halaman lain untuk user biasa
+            }
         }
 
-        return back()->withErrors(['email' => 'Email atau password salah.']);
+        return back()->withErrors([
+            'email' => 'Email atau password salah',
+        ]);
     }
 
     // Tampilkan halaman register
